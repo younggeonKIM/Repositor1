@@ -1,0 +1,11 @@
+@charset "EUC-KR";
+body {background-color :#FCDFFF;
+	font-size:30px; color:#BC8F8F; font-family:'HY목각파임B', '휴먼아미체';}
+menu {border : 3px solid #665D1E; font-size: 20px; border-radius:0.5rem;
+		font-family : 'HY목각파임B','궁서체'; padding :35px; margin:40px;
+		}
+section {margin:40px;}
+a {background-color : white; }
+a:link{color:#513B1C;}
+a:visited{color:#728FCE; background-color:#9AFEFF; border : 1px solid white;}
+a:hover{color:#FDD7E4; background-color:#D16587;}

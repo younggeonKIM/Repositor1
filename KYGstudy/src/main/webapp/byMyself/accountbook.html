@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+.title {font-family:'휴먼매직체'; color:#915F6D;}
+#BOOK {font-family:'궁서체'; color: #513B1C; }
+#result {border:4px solid #C48793; padding: 100px; 
+		color:#583759; font-family:'새굴림';}
+</style>
+</head>
+<body>
+<div align="center">
+	<h2 class="title">2022.05.지출액 요약</h2>
+	<form action="" name="Nam">
+	<label for="Spen">이번달 지출액을 생각나는 대로 입력해 주세요: </label>
+	<input type="text" name="Spending" id="Spen" />
+	<input type="button" value="입력" onClick="Writ()"/>
+	</form>
+	<input type="button" value="총합" onClick="Sum()"/>
+<div id="result"></div>
+</div>
+<script type="text/javascript">
+function Writ() {
+	var spending=document.Nam.Spending.value;
+	var html="";
+		
+		if (isNaN(spending)==true||spending<1000) {
+			alert ("지출액은 1000 이상의 숫자로만 입력해 주세요.");
+		}
+		
+		html=html+spending+", ";
+	
+	document.getElementById("result").innerHTML=html;
+}
+function sum() {
+	var ;
+	document.getElementById("result").innerHTML=tota;
+}
+</script>
+</body>
+</html>
