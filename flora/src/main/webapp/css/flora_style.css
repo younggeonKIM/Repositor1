@@ -1,0 +1,21 @@
+@charset "EUC-KR";
+body {background-color:#CCFB5D; font-family:'ÈÞ¸ÕÆíÁöÃ¼', 'ÈÞ¸Õ¿¾Ã¼';}
+.florimags section > .inner {width:1300px; margin:0 auto; padding-bottom:206px; box-sizing : border-box;}
+.florimags .inner > div {width:calc((100%-45px)/4); margin-right: 15px; background:#FFF; border-radius:10px; 
+							display:inline-block; vertical-align:middle; font-size:18px; min-height:37px;}
+.florimags .inner > div .inner {padding:0 9px; box-sizing:border-box; }
+.florimags .inner > div .title {height:84px; font-size:30px; font-weight:bold; text-align:center; 
+							box-sizing:border-box; border-bottom: 1px dashed #cccccc; letter-spacing : -0.15em; 
+							color: #5CB3FF; position:relative;}
+.florimags .inner .uchae .uchae_wrap { padding-top : 376px; background:url("../img/uchae.jpg") no-repeat center top; 
+							background-size: cover;}
+.florimags .pinkmuhly .pinkmuhly_wrap { padding-top : 376px; background:url("../img/pinkmuhly.jpg") no-repeat center top; 
+							background-size : cover; }
+.florimags .mugunghwa .mugunghwa_wrap { padding-top : 376px; background : url("../img/mugunghwa.jpg") no-repeat center top; 
+							background-size: cover; object-fit:cover;}
+#Sort { width : 650px; border : 1px solid #FFF; border-radius : 10px; margin:0 auto; padding:40px; box-sizing:border-box;}
+#Sort ul li {list-style-type : none; float : left; outline: 1px dotted red; margin-left : 20px; font-size:23px;}
+
+#presenCont {width : 1300px; margin:0 auto; padding-bottom: 306px; box-sizing : border-box;}
+.presentTbl table {padding:10px; border: 1px solid #FFF; }
+.presentTbl th, td {border : 1px solid #FFF; border-collapse : collapse;}

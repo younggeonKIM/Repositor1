@@ -1,0 +1,28 @@
+floraIndex.titl=식물 정보 총망라
+floraIndex.head=식물 도감 Ver 1.0입니다.
+floraLogin.head=로그인해 주세요.
+floraLogin.titl=로그인하기
+floraLoginResult.titl=로그인 결과
+floraLogout.titl=로그아웃 결과
+floraLogout.head=로그아웃됐습니다.
+floraMembEntry.titl=회원가입
+floraMembEntry.head=사용하실 계정을 모두 기입해 주세요.
+floraMembEntryResult.titl=회원가입 결과
+floraMembEntryResult.head=회원가입이 완료됐습니다!!
+error.required.membId=계정을 입력하세요.
+error.required.membPwd=암호를 입력하세요.
+error.required.membName=성명을 입력하세요.
+error.input.memb=입력정보에 문제가 있습니다.
+error.duplicat.memb=계정이 중복됐습니다. 다른 ID를 입력해 주세요.
+
+floraSort.title=식물 종류 도감
+floraSort.head=다양한 식물 종류를 찾아볼 수 있습니다.
+floraSortMGSN.titl=식물 종류 상세 찾기
+floraSortMGSN.head=식물 이름을 목, 과, 속까지 확인할 수 있습니다.
+floraSortDetail.titl=식물 종류 상세
+floraSortDetail.head=다음 식물을 잘 관찰해 주세요.
+
+floraPresent.titl=꽃선물해봐요
+floraPresent.head=다양한 상황에 맞는 꽃말 찾아봅시다.
+
+floraPresentDetail.head=꽃말에 맞는 꽃들을 찾았습니다.
