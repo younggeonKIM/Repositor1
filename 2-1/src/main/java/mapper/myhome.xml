@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.myhome">
+	
+	<select id="getLocation" resultType="model.Location">
+		select location_id, street_address, postal_code, 
+		city, state_province, country_id from locations
+	</select>
+	<select id="getEmployee" resultType="model.Employee">
+		select employee_id, first_name, last_name, phone_number 
+		from employees
+	</select>
+	<select id="getDepartment" resultType="model.Department">
+		select * from departments
+	</select>
+</mapper>

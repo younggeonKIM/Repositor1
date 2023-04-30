@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.myhome">
+	<insert id="putUser" parameterType="model.User">
+		insert into user_account values(#{userId},#{password},#{userName},#{address},#{email},
+		#{job},#{birthday},'111',#{gender})
+	</insert>
+	
+	<select id="getItem" resultType="model.Item" 
+			parameterType="Integer">
+		select item_id as itemId, item_name as itemName, price, info, 
+		picture_url as pictureUrl from myitems where item_id=#{id}
+	</select>
+	<select id="getItemList" resultType="model.Item">
+		select item_id as itemId, item_name as itemName, price, info, 
+		picture_url as pictureUrl from myitems
+	</select>
+	
+	<select id="getUser" parameterType="model.User" resultType="model.User">
+		select user_id userId, password, user_name userName, address, email, job, birthday, postcode, gender
+		from user_account where user_id = #{userId} and password = #{password}
+	</select>
+</mapper>

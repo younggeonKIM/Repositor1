@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.myhome">
+	<select id="findItem" parameterType="String" resultType="model.Item">
+	select item_id as itemId, item_name as itemName, price, info, 
+		picture_url as pictureUrl from myitems where item_name like '%' || #{name} || '%'
+	</select>
+	<update id="updateItem" parameterType="model.Item">
+		update myitems set item_name =#{itemName}, price=#{price}, info=#{info}, picture_url=#{pictureUrl} 
+		where item_id = #{itemId}
+	</update>
+	<delete id="deleteItem" parameterType="Integer">
+		delete from myitems where item_id = #{id}
+	</delete>
+	<insert id="putItem" parameterType="model.Item">
+		insert into myitems values (#{itemId}, #{itemName}, #{price}, #{info}, #{pictureUrl})
+	</insert>
+	
+	<select id="getItem" resultType="model.Item" 
+			parameterType="Integer">
+		select item_id as itemId, item_name as itemName, price, info, 
+		picture_url as pictureUrl from myitems where item_id=#{id}
+	</select>
+	<select id="getItemList" resultType="model.Item">
+		select item_id as itemId, item_name as itemName, price, info, 
+		picture_url as pictureUrl from myitems
+	</select>
+</mapper>

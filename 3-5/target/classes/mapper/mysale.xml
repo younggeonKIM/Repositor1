@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.mysale">
+	<select id="getMaxSaleId" resultType="Integer">
+		select max(sale_id) as sale_id from sales
+	</select>
+	<insert id="putSale" parameterType="model.Sale">
+		insert into sales values(#{saleId}, #{userId}, sysdate)
+	</insert>
+	<insert id="putSaleDetail" parameterType="model.SaleDetail">
+		insert into sales_detail values(#{saleId}, #{saleDetailId}, #{itemId}, #{quantity}, sysdate)
+	</insert>
+</mapper>
