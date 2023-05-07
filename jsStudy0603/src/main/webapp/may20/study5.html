@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<div align="center">
+<h2>숫자 맞추기 게임</h2>
+<p>컴퓨터가 가지고 있는 숫자(1~99)를 5회 이내에 맞추면 
+승리, 맞추지 못하면 패배하는 게임입니다.</p>
+<input type="button" value="게임 시작" onClick="doGame()"/>
+<input type="button" value="게임 시작" onClick="doGuess()"/>
+</div>
+<script type="text/javascript">
+function doGuess() {
+	var luckyNum=parseInt((Math.random()*99)+1);
+	var count=0; //게임의 횟수를 세기 위한 변수
+	var win=true;
+	for (;;) { //5회 반복
+		var input =prompt("1부터 99까지의 수를 입력하세요.");
+		count++; //게임의 횟수를 증가한다.
+		if(input==null||isNaN(input)==true||parseInt(input)<1||parseInt(input)>99) {
+			count--;
+			alert ("1~99의 숫자만 입력해야 합니다.");
+			continue;
+		}
+		input=parseInt(input);
+		if(input>luckyNum) {
+				alert("입력한 값이 더 큽니다.");
+		}
+		else if (input<luckyNum) {
+				alert("입력한 값이 더 작습니다.");
+		}
+		else {
+				alert("!!!축하합니다. 맞추었습니다.");
+				win=false;
+				break;
+			} //if의 끝
+		} //for의 끝
+		if(count==5) {
+			alert(luckyNum+"을 맞추지 못했습니다. 다음 기회에...");
+		} //5회인 경우 반복 종료
+		
+	alert("doguess");
+}//함수의 끝
+function doGame() {
+
+var luckyNum =parseInt((Math.random()*99)+1);
+var win=false;
+
+for (var cnt=0;cnt<5;cnt++) { //5회 반복
+	var input =prompt("1부터 99까지의 수를 입력하세요.");
+	if(input==null||
+	isNaN(input)==true||parseInt(input)<1||parseInt(input)>99) {
+		cnt--;
+		alert ("1~99의 숫자만 입력해야 합니다.");
+		continue;
+	}
+	input=parseInt(input);
+	if(input>luckyNum) {
+		alert("입력한 값이 더 큽니다.");
+	}
+	else if (input<luckyNum) {
+		alert("입력한 값이 더 작습니다.");
+	}
+	else {
+		alert("!!!축하합니다. 맞추었습니다.");
+		win=true;
+		break;
+		}//if의 끝
+	}//for의 끝
+	if (win==false) {
+		alert(luckyNum+"을 맞추지 못했습니다. 다음 기회에...");
+		}
+}//함수의 끝
+</script>
+</body>
+</html>

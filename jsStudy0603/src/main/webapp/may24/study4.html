@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+.tree {line-height:0.6em; font-size:50px; color:green;}
+</style>
+</head>
+<body>
+<div class="tree">
+<script type="text/javascript">
+for (var nopi=1;nopi<=5;nopi++) {
+	for (var star=1;star<=nopi;star++) {
+		document.write("*");
+	}
+	document.write("<br/>");
+}
+document.write("<br/>");
+var nopi=1; var star=1;
+while (nopi<=5) {
+	star=1; 
+	while (star<=nopi) {
+		document.write("*");
+		star++;
+	}
+	document.write("<br/>");
+	nopi++;
+}
+document.write("<br/>");
+nopi=1; 
+do {
+	star=1;
+	do {
+		document.write("*");
+		star++;
+	} while(star<=nopi);
+	document.write("<br/>");
+	nopi++;
+} while(nopi<=5) ;
+</script>
+</div>
+</body>
+</html>

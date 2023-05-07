@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+.tree {line-height:0.6em; font-size:40px; color:red;}
+</style>
+</head>
+<body>
+<div class="tree">
+<script type="text/javascript">
+//1. 오른쪽에 붙여서 그리는 나무, 높이 10
+document.write("<h2 align='center'>오른쪽 기준 나무</h2>");
+for (var nopi=1;nopi<=10;nopi++) {//높이 반복
+	for(var blan=1;blan<=(10-nopi);blan++) {
+		document.write("_");
+	}//공백 반복
+	for (var star=1;star<=nopi;star++) {
+		document.write("*");
+	}//잎 반복
+	document.write("<br/>");
+}
+document.write("<br/>");
+//2. 오른쪽에 붙여서 그리는 위로 갈수록 잎이 많아지는 나무, 높이 10
+document.write("<h2 align='center'>오른쪽 기준 나무2</h2>");
+for (var nopi=10;nopi>=1;nopi--) {
+	for (var spac=1;spac<=(10-nopi);spac++) {
+		document.write("_");
+	}
+	for (var star=1;star<=nopi;star++) {
+		document.write("*");
+	}
+	document.write("<br/>");
+}
+document.write("<br/>");
+//3.오른쪽에 붙여서 그리는 잎이 홀수개인 나무
+document.write("<h2 align='center'>오른쪽 홀수 나무</h2>");
+for (var nopi=1;nopi<=19;nopi=nopi+2) {//높이 반복 (10회 반복)
+	for (var spac=1;spac<=(nopi-1);spac++) {// _ 반복 0, 2, 4, 6, ..., 18
+		document.write("_");
+	}
+	for (var star=1;star<=(20-nopi);star++) {//잎 반복
+		document.write("*");
+	}
+	document.write("<br/>");
+}
+document.write("<br/>");
+//4. 오른쪽에 붙여서 그리는 잎이 짝수개인 나무
+document.write("<h2 align='center'>오른쪽 짝수 나무</h2>");
+for (var nopi=0 ; nopi<=18 ; nopi=nopi+2) {//높이 반복
+	for (var spac=0 ; spac<=nopi ; spac++) {//공백 반복(0, 2, 4, ...,18)
+		document.write("_");
+	}
+	for (var star=1 ; star<=(20-nopi) ; star++) {//20, 18, ...,2
+		document.write("*");
+	}
+	document.write("<br/>");
+}
+
+</script>
+</div>
+</body>
+</html>

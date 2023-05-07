@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+.tree {line-height:0.6em; font-size:50px; color:green;}
+</style>
+</head>
+<body>
+<h2 align="center">while로 테이블 만들기</h2>
+<script type="text/javascript">
+//5행 3열의 테이블 만들기
+var row=1; var col=1;
+document.write("<table border='1'>");
+while (row<=5) {//5행 (5회 반복 <tr></tr>)
+	document.write("<tr>");
+	col=1;
+	while (col<=3) {//3열 (3회 반복 <td></td>)
+		document.write("<td>"+row+", "+col+"</td>");
+		
+		col++;
+	}
+	row++;
+	document.write("</tr>");
+}document.write("</table><br/>");
+document.write("<h2 align='center'>while로 나무 그리기</h2>");
+document.write("<div class='tree'>");
+var nopi=1; var star=1;
+while(nopi<=10) {//높이 반복 (10회) (1, 2, 3, ...,10)
+	star=1;
+	while(star<=nopi) {//잎사귀 반복 (1회, 2회, 3회, ..., 10회)
+		document.write("*");
+		star++;
+	}
+	document.write("<br/>");
+	nopi++;
+}
+document.write("</div>");
+</script>
+</body>
+</html>

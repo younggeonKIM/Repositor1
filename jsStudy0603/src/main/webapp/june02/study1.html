@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>매장의 상품정보를 위한 상품 객체</h2>
+<div id="display"></div>
+<script type="text/javascript">
+function Product(name, price, nation, p_date) {
+	//상품 이름, 가격, 원산지, 제조일
+	this.name=name;
+	this.price=price;
+	this.origin=nation;
+	this.p_date=p_date;
+}
+var items=[]; //1차원 배열
+items[0]=new Product("새우깡", 1500, "대한민국", "2022/05/08");
+items[1]=new Product("신라면", 1300, "대한민국", "2021/12/15");
+items[2]=new Product("세탁기", 350000, "중국", "2021/11/10");
+var html="<h3>상품목록</h3>";
+for (var cnt=0; cnt<items.length ; cnt++) {
+	html=html+items[cnt].name+"<br/>";
+}
+document.getElementById("display").innerHTML=html;
+var goods=[new Product("새우깡", 1500, "대한민국", "2022/05/08")
+			,new Product("신라면", 1300, "대한민국", "2021/12/15")
+			,new Product("세탁기", 350000, "중국", "2021/11/10")];
+document.write (items[1].origin);
+</script>
+</body>
+</html>

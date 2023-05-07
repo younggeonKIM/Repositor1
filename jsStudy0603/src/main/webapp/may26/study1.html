@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<div align="center">
+<h2>월드컵 조 추첨 ver1.0</h2>
+<p>16강의 팀을 A조와 B조로 나눕니다.</p>
+<input type="button" value="추첨 결과 (테이블 1개)" onClick="show()"/>
+<input type="button" value="추첨 결과 (테이블 2개)" onClick="show2()"/>
+<div id="result">이 곳에 출력됩니다.</div>
+<h2>월드컵 조 추첨 ver2.0</h2>
+<p>24강의 팀을 A조와, B조, C조로 나눕니다.</p>
+<input type="button" value="결과 보기(테이블 1개)" onClick="showResult()"/>
+<div id="target">이 곳에 출력됩니다.</div>
+</div>
+<script type="text/javascript">
+function show() {
+	var teams =["우루과이", "프랑스", "벨기에", "터키", "독일", "스웨덴", 
+				"브라질", "아르헨티나", "중국", "대한민국", "뉴질랜드", "러시아",
+				"네덜란드", "포르투갈", "가나", "콩고 민주공화국"]
+	var imsi=-1;
+	for (var mix=0;mix<200;mix++) {
+		imsi=teams[0];
+		var nansu=parseInt(Math.random()*16);
+		teams[0]=teams[nansu];
+		teams[nansu]=imsi;
+	}
+	var html="<table border='1'><tr><th></th><th>A조</th>"+
+				"<th>B조</th></tr>";
+	for (var group=0; group<8;group++) {
+		html=html+"<tr><th>"+(group+1)+"</th><td>"+teams[group]+
+		"</td><td>"+teams[group+8]+"</td>";
+	}
+	html=html+"</table>";
+	document.getElementById("result").innerHTML=html;
+}
+function show2() {
+	var teams =["우루과이", "프랑스", "벨기에", "터키", "독일", "스웨덴", 
+		"브라질", "아르헨티나", "중국", "대한민국", "뉴질랜드", "러시아",
+		"네덜란드", "포르투갈", "가나", "콩고 민주공화국"]
+	var imsi=-1;
+	for (var mix=0;mix<200;mix++) {
+	imsi=teams[0];
+	var nansu=parseInt(Math.random()*16);
+	teams[0]=teams[nansu];
+	teams[nansu]=imsi;
+	}
+	var ahtml="<table border='1'><tr><th></th><th>A조</th>";
+	for (var a=0;a<8;a++) {
+		ahtml=ahtml+"<tr><th>"+(a+1)+"</th><td>"+teams[a]+"</td></tr>";
+	}
+	ahtml=ahtml+"</table><br/>";
+	var bhtml="<table border='1'><tr><th></th><th>B조</th>";
+	for (var a=8;a<16;a++) {
+		bhtml=bhtml+"<tr><th>"+(a-7)+"</th><td>"+teams[a]+"</td></tr>";
+	}
+	bhtml=bhtml+"</table>";
+	document.getElementById("result").innerHTML=ahtml+bhtml;
+}
+function showResult() {
+	var teams24=["우루과이", "프랑스", "벨기에", "터키", "독일", "스웨덴", 
+		"브라질", "아르헨티나", "중국", "대한민국", "뉴질랜드", "러시아",
+		"네덜란드", "포르투갈", "가나", "콩고 민주공화국", "일본", "파라과이", 
+		"미국", "폴란드", "스페인", "카자흐스탄", "베트남", "태국"];
+	var temp=-1;
+	for (var mix24=0;mix24<400;mix24++) {
+		temp=teams24[0];
+		var nansu24=parseInt(Math.random()*24);
+		teams24[0]=teams24[nansu24];
+		teams24[nansu24]=temp;
+	}
+	var html24="<table border='1'><tr><th></th><th>A조</th>"
+				+"<th>B조</th><th>C조</th></tr>"
+	for (var group=0; group<8; group++) {
+		html24=html24+"<tr><th>"+(group+1)+"</th><td>"+teams24[group]+
+				"</td><td>"+teams24[group+8]+"</td><td>"+
+				teams24[group+16]+"</td></tr>";
+	}
+	html24=html24+"</table>";
+	document.getElementById("target").innerHTML=html24;
+}
+</script>
+</body>
+</html>

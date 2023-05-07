@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+function makeRand(from,to) {
+	var ran=parseInt(Math.random()*(to-from+1)+from);
+	return ran;
+}
+var rand = ""; //6자리 코드가 저장될 변수
+for ( var a=1 ; a<=51 ;a=a+10 ) {
+	rand = rand+makeRand(0,9);
+} //6회 반복
+document.write("<h2>6자리 코드:"+rand+"</h2>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

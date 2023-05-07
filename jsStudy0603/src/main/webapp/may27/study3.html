@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<div align="center">
+<h2>맛집 소개 APP ver1.0</h2>
+<form action="" name="matjip">
+<p>원하시는 지역을 선택하시면, 해당 지역의 맛집이 출력됩니다.</p>
+지역 : <select name="town">
+		<option>---선택하세요---</option>
+		<option>강동구</option><option>강북구</option>
+		<option>강서구</option><option>마포구</option>
+</select><br/><br/>
+<input type="button" value="결과 보기" onClick="showMatjip()"/>
+</form>
+<div id="result">이 곳에 출력됩니다.</div>
+</div>
+<script type="text/javascript">
+function showMatjip() {
+	var idx=document.matjip.town.selectedIndex;
+	var matjip=[
+		["강동분식", "강동일식", "강동한식"], //강동구의 맛집이름
+		["강북중화요리", "강북복집"], //강북구의 맛집이름
+		["디진다 돈가스", "강서분식", "옥루관"], //강서구의 맛집이름
+		["마포 생선구이", "마포루", "마포반점"] //마포구의 맛집이름
+	];
+	if (idx!=0) {
+		var html="";
+		for (var a=0;a<matjip[idx-1].length;a++) {
+			html=html+matjip[idx-1][a]+" ";
+		}//맛집을 찾는다.
+		alert ("맛집 이름: "+html);
+	}else {
+		alert ("지역 이름을 선택해야 합니다.");
+	}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+//메뉴 이름을 입력해서 가격을 출력
+//콜라, 사이다 : 1500원
+//아메리카노 : 2000원
+//카페라테 ,카푸치노, 카페모카 : 3000원
+//카카오, 생과일쥬스 : 3500원
+var name = prompt("원하시는 메뉴 이름을 입력하세요.");
+switch(name) {
+case "콜라": 
+case "사이다": alert("1500원"); break;
+case "아메리카노": alert("2000원"); break;
+case "카페라테":
+case "카푸치노":
+case "카페모카": alert("3000원"); break;
+case "카카오":
+case "생과일쥬스": alert("3500원"); break;
+default: alert("잘못 입력했습니다."); break;
+}
+</script>
+</body>
+</html>

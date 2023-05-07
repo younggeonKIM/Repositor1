@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+//1.1부터 100중 3의 배수의 합(for, while, do-while)
+var sum=0; //합이 저장될 변수 선언
+for (var cnt=1;cnt<101;cnt++) {
+	if (cnt%3==0) {
+		sum=sum+cnt;
+	}
+}
+document.write("3의 배수의 합(for유한): "+sum+"<br/>");
+var cnt=1; 
+sum=0;
+while (cnt<101) {
+	if (cnt%3==0) {
+		sum=sum+cnt;
+		
+	}
+	cnt++;
+}
+document.write("3의 배수의 합(while유한): "+sum+"<br/>");
+sum=0;
+cnt=1;
+do {
+	if (cnt%3==0) {
+		sum=sum+cnt;
+	}
+	
+	cnt++;
+} while (cnt<101);
+document.write("3의 배수의 합(do-while유한): "+sum+"<br/>");
+sum=0; var forCnt=0;
+for (;;) {
+	forCnt++;
+	if (forCnt%3==0) {
+		sum=sum+forCnt;
+	}
+	if (forCnt==100) {
+		break;
+	}
+}
+document.write("3의 배수의 합(for무한): "+sum+"<br/>");
+sum=0; var count=1; 
+while (true) {
+	if (count%3==0) {
+		sum=sum+count;
+	}
+	if(count==100) {
+		break;
+	}
+	count++;
+}
+document.write("3의 배수의 합(while무한): "+sum+"<br/>");
+sum=0; count=1;
+do {
+	if (count%3==0) {
+		sum=sum+count;
+	}
+	if (count==100) {
+		break;
+	}
+	count++;
+} while(true); 
+document.write("3의 배수의 합(do-while무한): "+sum+"<br/>");
+</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+body {height:500px;}
+table {border:10px solid red;}
+.square {margin:10px; border:5px solid blue; color:red; 
+		padding:30px; text-align:center; background-color:lightblue;}
+.block {margin:10px; border:10px solid green; color:orange; 
+		padding:20px; text-align:right; background-color:yellow;}
+</style>
+</head>
+<body>
+<h2 align="center">자바스크립트로 CSS 제어하기</h2>
+<div id="box" class="square">
+	<h2>여기에 효과가 나타납니다.</h2>
+</div>
+	<input type="button" value="square 클래스 적용" 
+	onClick="changeClass('square')"/>
+	<input type="button" value="block 클래스 적용" 
+	onClick="changeClass('block')"/><br/>
+	<input type="button" value="세로변경" onClick="setHeight('50%')"/>
+	<input type="button" value="세로변경(자동)" 
+	onClick="setHeight('auto')"/><br/>
+	<input type="button" value="가로변경" onClick="setWidth('50%')"/>
+	<input type="button" value="가로변경(자동)" 
+	onClick="setWidth('auto')"/><br/>
+	<input type="button" value="글자색(적색)" onClick="setFontColor('red')"/>
+	<input type="button" value="글자색(녹색)" onClick="setFontColor('green')"/>
+	<input type="button" value="글자색(청색)" 
+	onClick="setFontColor('blue')"/><br/>
+	<input type="button" value="배경색(적색)" onClick="setBgColor('red')"/>
+	<input type="button" value="배경색(녹색)" onClick="setBgColor('green')"/>
+	<input type="button" value="배경색(청색)" onClick="setBgColor('blue')"/>
+<script type="text/javascript">
+function changeClass(name) {
+	document.getElementById("box").className=name;
+}
+function setHeight(h) {
+	document.getElementById("box").style.height=h;
+}
+function setWidth(w) {
+	document.getElementById("box").style.width=w;
+}
+function setFontColor(c) {
+	document.getElementById("box").style.color=c;
+}
+function setBgColor(bgC) {
+	document.getElementById("box").style.backgroundColor=bgC;
+}
+</script>
+</body>
+</html>

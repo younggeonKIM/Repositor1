@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>함수 선언/호출 방법과 객체 작성법</h2>
+<script type="text/javascript">
+function showSomething() {
+	document.write("<h2>함수를 호출합니다.</h2>");
+}
+showSomething(); //1방법으로 함수를 호출한다.
+var show=showSomething;
+show(); //2방법으로 함수를 호출한다.
+var call=function () {
+	document.write("<h3>함수를 호출합니다.</h3>");
+};
+call ();
+//고객을 위한 객체(이름:customer)를 선언한다.
+var customer= {}; //객체 선언!
+customer.name="홍길동"; //고객의 이름
+customer.addr="서울시 송파구"; //고객의 주소
+customer.age="32"; //고객의 나이
+customer.gender="남자"; //고객의 성별
+customer.showName=function() {
+	document.write("고객이름: "+customer.name+"<br/>");
+};
+customer.showAddr=function() {
+	document.write("고객주소: "+customer.addr+"<br/>");
+};
+customer.showAge=function() {
+	document.write("고객나이: "+customer.age+"<br/>");
+};
+customer.showGender=function() {
+	document.write("고객성별: "+customer.gender+"<br/>");
+};
+customer.showName(); //customer 객체의 showName 함수 호출
+customer.showAddr();
+customer.showAge();
+customer.showGender();
+</script>
+</body>
+</html>

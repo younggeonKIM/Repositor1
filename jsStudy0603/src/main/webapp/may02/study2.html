@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+//음식 메뉴를 입력하면, 해당 메뉴의 가격을 출력하는 시스템
+alert("****메뉴 가격 확인 시스템 ver1.0****");
+var menu=prompt("메뉴의 이름을 입력하세요.");
+if (isNaN(menu)==false){//입력한 이름이 숫자인 경우
+	alert("메뉴 이름은 문자로 입력해야 합니다.");	
+}
+else {//입력한 이름이 문자인 경우
+	if(menu=="부리또"){	
+		alert("부리또의 가격은 9000원입니다.");	
+	}else if(menu=="치즈피자"){
+		alert("치즈피자의 가격은 7000원입니다.");
+	}else if(menu=="불닭떡볶이"){
+		alert("불닭떡볶이의 가격은 7500원입니다.");
+	}else if(menu=="멘보샤"){
+		alert("멘보샤의 가격은 4000원입니다.");
+	}else{
+		alert("해당 메뉴는 존재하지 않습니다.");
+	}
+}
+</script>
+</body>
+</html>

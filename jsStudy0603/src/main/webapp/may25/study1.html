@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<div align="center">
+<h2>배열을 이용한 간단한 소설 작성</h2>
+<div id="book">이 곳에 출력됩니다.</div>
+<input type="button" value="소설 만들기" onClick="makeStory()"/>
+</div>
+<script type="text/javascript">
+function makeStory() {
+	//누가, 언제, 어디서, 무엇을,
+	var who=["내가", "친구가", "옆집 아줌마가", "옆집 아저씨가", "친구의 동생이", 
+			"선생님이"];
+	var when=["오늘 아침에", "어제 저녁에", "일주일 전에", "한달 전에", "그저께",
+			"어제 아침에", "어제 오후에"];
+	var where=["집에서", "버스 안에서", "전철 안에서", "학교에서", "길거리에서",
+				"마트 안에서", "도서관에서"];
+	var what=["노래를 불렀다.", "소리를 질렀다.", "큰소리로 웃었다.", "잠을 잤다.",
+				"화를 냈다."];
+	var totalStory=[];
+	for (var a=0;a<=9;a++) {//10번 반복
+		var r1=makeRandom(0, 5); //0~5 사이의 난수
+		var r2=makeRandom(0, 6); //0~6 사이의 난수
+		var r3=makeRandom(0, 6); //0~6 사이의 난수
+		var r4=makeRandom(0, 4); //0~4 사이의 난수
+		var story=who[r1]+" "+when[r2]+" "+where[r3]+" "+
+					what[r4]+"<br/>";
+		totalStory[a]=story;
+	}
+	var fullStory="";
+	for (var b=0;b<=9;b++) {
+		fullStory=fullStory+totalStory[b];
+	}
+	document.getElementById("book").innerHTML=fullStory;
+}
+function makeRandom(from, to) {
+	return parseInt((Math.random()*(to-from+1))+from);
+}
+</script>
+</body>
+</html>

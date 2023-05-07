@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+//반복의 중첩
+for (var dan=1;dan<=5;dan++) {//5회 반복
+	for (var su=1;su<=3;su++) {//3회 반복
+		document.write("안녕");
+	}
+}
+var msg="<table border='1'><tr>";
+for (var a =1;a<=10 ;a++) {//10회
+	msg=msg+"<td>"+a+"</td>";
+}
+msg=msg+"</tr></table><br/>";
+msg=msg+"<table border='1'><tr>";
+for (var b=1 ; b<=10 ; b++) {
+	msg=msg+"<tr><td>"+b+"</td></tr>";
+}
+msg=msg+"</table><br/>";
+msg=msg+"<table border='1'>";
+for (var c=1 ; c<=10 ; c++) {
+	msg=msg+"<tr>";
+	for (var c1=1 ; c1<=10 ; c1++) {
+		msg=msg+"<td>"+c+", "+c1+"</td>";
+	}
+	msg=msg+"</tr>";
+}
+msg=msg+"</table><br/>";
+document.write(msg);
+//문제1. 4행 3열의 테이블을 그린다.
+var mess ="<table border='1'>";
+for (var a=1; a<=4 ; a++) {
+	mess =mess+"<tr>";
+	for (var a1=1; a1<=3; a1++) {
+		mess = mess+"<td>"+a+", "+a1+"</td>";
+	}
+	mess=mess+"</tr>";
+}
+mess=mess+"</table><br/>";
+document.write(mess);
+//문제2. 6행 2열의 테이블을 그린다.
+var mess2 = "<table border='1'>";
+for (var b=1; b<=6; b++) {
+	mess2=mess2+"<tr>";
+	for (var b1=1; b1<=2; b1++) {
+		mess2=mess2+"<td>"+b+", "+b1+"</td>";
+	}
+	mess2=mess2+"</tr>";
+}
+mess2=mess2+"</table><br/>";
+document.write(mess2);
+//문제3. 5행 8열의 테이블을 그린다.
+var mess3 = "<table border='1'>";
+for (var c=1; c<=5; c++) {
+	mess3=mess3+"<tr>";
+	for (var c1=1; c1<=8; c1++) {
+		mess3=mess3+"<td>"+c+", "+c1+"</td>";
+	}
+	mess3=mess3+"</tr>";
+}
+mess3=mess3+"</table>";
+document.write(mess3);
+</script>
+</head>
+<body>
+
+</body>
+</html>

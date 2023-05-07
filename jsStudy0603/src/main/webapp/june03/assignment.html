@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<div align="center">
+<h2>콤보박스 자동 생성-식당 메뉴 이름 출력</h2>
+<form action="" name="frm">
+요리의 종류를 선택하세요 : <select name="food">
+						<option value="bun">분식</option>
+						<option value="han">한식</option>
+						<option value="jung">중식</option>
+						<option value="ill">일식</option>
+						<option value="yang">양식</option>
+					</select>
+<input type="button" value="확인" onClick="showDish()"/>
+<div id="menu">이 곳에 메뉴가 출력됩니다.</div>
+<div id="price">이 곳에 가격이 출력됩니다.</div>
+</form>
+</div>
+<script type="text/javascript">
+var dish={
+		"bun":[
+			{"menu":"라면", "price":3000}, {"menu":"떡볶이", "price":3000}, 
+			{"menu":"쫄면", "price":3500}, {"menu":"칼국수", "price":4000}, 
+			{"menu":"어묵", "price":2000}, {"menu":"순대", "price":2500}
+			],
+		"han":[
+			{"menu":"김치찌개", "price":8000}, {"menu":"된장찌개", "price":8000}, 
+			{"menu":"순두부찌개", "price":8500}, {"menu":"불고기 백반","price":9000}
+			],
+		"jung":[
+			{"menu":"짜장면", "price": 6000}, {"menu":"짬뽕","price":7000}, 
+			{"menu":"탕수육","price":10000}, {"menu":"양장피","price":15000}, 
+			{"menu":"기스면","price":8000}
+			],
+		"ill":[
+			{"menu":"회 덮밥","price":9000}, {"menu":"참치 회","price":11000}, 
+			{"menu":"우동","price":8000}, {"menu":"초밥","price":10000}, 
+			{"menu":"모듬 회","price":20000}
+			],
+		"yang":[
+			{"menu":"스테이크", "price":20000}, {"menu":"파스타","price":30000}, 
+			{"menu":"햄버거", "price":5000}, {"menu":"알리오올리오","price":25000}, 
+			{"menu":"피자","price":25000}
+			]
+	};
+function showDish() {
+	var ind=document.frm.food.value;
+	var men="";
+	switch (ind) {
+	case "bun": men=dish.bun; break;
+	case "han": men=dish.han; break;
+	case "jung": men=dish.jung; break;
+	case "ill": men=dish.ill; break;
+	case "yang": men=dish.yang; break;
+	}
+	var html="<select name='Dish'>";
+	for (var cnt=0; cnt<men.length; cnt++) {
+		html=html+"<option>"+men[cnt].menu+"</option>";
+	}
+	html=html+"</select>";
+	html=html+"<input type='button' value='가격 보기' "+
+	"onClick='showPrice()'/>";
+	document.getElementById("menu").innerHTML=html;
+}
+function showPrice() {
+	var ind=document.frm.food.value;
+	var men="";
+	switch (ind) {
+	case "bun": men=dish.bun; break;
+	case "han": men=dish.han; break;
+	case "jung": men=dish.jung; break;
+	case "ill": men=dish.ill; break;
+	case "yang": men=dish.yang; break;
+	}
+	var indPri=document.frm.Dish.selectedIndex;
+	document.getElementById("price").innerHTML=men[indPri].price;
+}
+</script>
+</body>
+</html>

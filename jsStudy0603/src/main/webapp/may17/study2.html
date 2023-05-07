@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+#output { line-height:1.1em; color:blue; font-size:40px; 
+		letter-spacing:20px; font-family:'궁서체'; }
+</style>
+</head>
+<body>
+<h2 align="center">문장 복사기 ver1.0</h2>
+<form action="" name="CANON">
+복사할 문장을 입력하세요. <input type="text" name="MSG"/><br/>
+개수를 입력하세요. <input type="text" name="NUM"/><br/>
+<input type="button" value="복 사" onClick="doCopy()"/>
+<input type="reset" value="취소"/>
+</form>
+<div id="output"></div>
+<script type="text/javascript">
+function makeCopy (msg,count) {
+	var number=parseInt(count);
+	var html="";
+	for (var cnt=0;cnt<=number;cnt++) {
+		html=html+msg+"<br/>";
+	}
+	document.getElementById("output").innerHTML=html;
+}
+function doCopy() {
+	var msg=document.CANON.MSG.value;
+	var count=document.CANON.NUM.value;
+	makeCopy(msg,count); //msg의 내용을 count의 수만큼 출력
+}
+</script>
+</body>
+</html>

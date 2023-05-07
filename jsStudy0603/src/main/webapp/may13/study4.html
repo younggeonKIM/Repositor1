@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+//반복의 중첩
+document.write("<h2>구구단 1단~9단</h2>");
+document.write("<table border='1'>");
+for (var dan=1; dan<=9 ; dan++) {
+	document.write("<tr><td>"+dan+"단</td></tr>");
+	for (var su=1; su<=9 ; su++) {
+		document.write("<tr><td>"+dan+"*"+su+"="+(dan*su)+"</td></tr>");
+		
+	}
+}
+document.write("</table>");
+document.write("<h2>구구단 2</h2>");
+document.write("<table border='1'>");
+for (var dan=1 ; dan<=9 ; dan++) {
+	document.write("<tr align='center'><td colspan='9'>"+dan+"단</td></tr><tr>");
+	for (var su=1 ; su<=9 ; su++) {
+		document.write("<td>"+dan+"*"+su+"="+(dan*su)+"</td>");
+	}
+	document.write("</tr>");
+}
+document.write("</table>");
+//짝수만 나오는 구구단
+document.write("<h2>짝수만 있는 구구단</h2>");
+document.write("<table border='1'>");
+for (var dan=2; dan<9 ; dan=dan+2) {
+	document.write("<tr align='center'><td colspan='4'>"+dan+"단</td></tr><tr>");
+	for (var su=2; su<9 ; su=su+2) {
+		document.write("<td>"+dan+"*"+su+"="+(dan*su)+"</td>");
+	}
+	document.write("</tr>");
+}
+document.write("</table>");
+//홀수만 나오는 구구단
+document.write("<h2>홀수만 있는 구구단</h2>");
+document.write("<table border='1'>");
+for (var dan=1 ; dan<=9 ; dan=dan+2) {
+	document.write("<tr align='center'><td colspan='5'>"+dan+"단</td></tr><tr>");
+	for (var su=1 ; su<=9 ; su=su+2) {
+		document.write("<td>"+dan+"*"+su+"="+(dan*su)+"</td>");	
+	}
+	document.write("</tr>");
+}
+document.write("</table>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<h2 align="center">환영합니다~ 즐겁게 노세요~</h2>
+<div align="center" class="body">
+<img alt="" src="img/dice3.png" id="slot1">
+<img alt="" src="img/dice3.png" id="slot2">
+<img alt="" src="img/dice3.png" id="slot3"><br/>
+<input type="button" value="시 작" onClick="doGame()"/>
+</div>
+<div id="result" align="center"></div>
+<script type="text/javascript">
+function doGame() {
+	doShuffle(300); //100의 의미 : 시간 간격
+}
+function doShuffle(interval) {
+	setTimeout(slotOne,interval,interval);
+}
+function randImg() {
+	var rnd=parseInt((Math.random()*6)+1); //1~6 난수
+	var imgName="";
+	switch (rnd) {
+	case 1: imgName="img/dice1.png"; break;
+	case 2: imgName="img/dice2.png"; break;
+	case 3: imgName="img/dice3.png"; break;
+	case 4: imgName="img/dice4.png"; break;
+	case 5: imgName="img/dice5.png"; break;
+	case 6: imgName="img/dice6.png"; break;
+	}
+	return imgName;
+}
+function slotOne(time) {
+	document.getElementById("slot1").src=randImg();
+	document.getElementById("slot2").src=randImg();
+	document.getElementById("slot3").src=randImg();
+	setTimeout(slotTwo,time,time);
+}
+function slotTwo(time) {
+	document.getElementById("slot1").src=randImg();
+	document.getElementById("slot2").src=randImg();
+	document.getElementById("slot3").src=randImg();
+	setTimeout(slotThree,time,time);
+}
+function slotThree(time) {
+	document.getElementById("slot1").src=randImg();
+	document.getElementById("slot2").src=randImg();
+	document.getElementById("slot3").src=randImg();
+	setTimeout(slotFour,time,time);
+}
+function slotFour(time) {
+	document.getElementById("slot1").src=randImg();
+	document.getElementById("slot2").src=randImg();
+	document.getElementById("slot3").src=randImg();
+	setTimeout(slotFive,time,time);
+}
+function slotFive(time) {
+	document.getElementById("slot1").src=randImg();
+	document.getElementById("slot2").src=randImg();
+	document.getElementById("slot3").src=randImg();
+	setTimeout(slotSix,time,time);
+}
+function slotSix(time) {
+	document.getElementById("slot1").src=randImg();
+	document.getElementById("slot2").src=randImg();
+	document.getElementById("slot3").src=randImg();
+	finalRound();
+}
+function rnd() {
+	var r=parseInt((Math.random()*6)+1);
+	return r;
+}
+function getImg(num) {
+	var name=""; //이미지 이름이 들어갈 변수
+	switch (parseInt(num)) {
+	case 1: name="img/dice1.png"; break;
+	case 2: name="img/dice2.png"; break;
+	case 3: name="img/dice3.png"; break;
+	case 4: name="img/dice4.png"; break;
+	case 5: name="img/dice5.png"; break;
+	case 6: name="img/dice6.png"; break;
+	}
+	return name;
+}
+function finalImage(su1,su2,su3) {
+	document.getElementById("slot1").src=getImg(su1);
+	document.getElementById("slot2").src=getImg(su2);
+	document.getElementById("slot3").src=getImg(su3);
+	var msg="";
+	if (su1==su2 && su2==su3) {
+		msg= "빙고!!!";
+		}
+	else {
+		msg="다음 기회에...";
+		}
+	document.getElementById("result").innerHTML=msg;
+}
+function finalRound() {
+	var r1= rnd();
+	var r2= rnd();
+	var r3= rnd();
+	//난수를 세 번 생성한다. 해당 난수를 사용해서 이미지를 바꾼다.
+	finalImage(r1,r2,r3);
+}
+</script>
+</body>
+</html>

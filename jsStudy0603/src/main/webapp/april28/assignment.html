@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+var a=prompt("아무 숫자나 입력하세요.");
+var b=prompt("또다른 숫자를 입력하세요.");
+var num1=parseInt(a);
+var num2=parseInt(b);
+var sum=num1+num2; var deduc=num1-num2; var mult=num1*num2;
+var div=num1/num2;
+var res="<table border='1'><tr><th>덧셈의 결과";
+var res=res+"</th><th>뺄셈의 결과</th><th>곱셈의 결과</th><th>나눗셈의 결과";
+var res=res+"</th></tr><tr><td>"+sum+"</td>";
+var res=res+"<td>"+deduc+"</td>";
+var res=res+"<td>"+mult+"</td>";
+var res=res+"<td>"+div+"</td></tr>"
+document.write(res);
+</script>
+</body>
+</html>

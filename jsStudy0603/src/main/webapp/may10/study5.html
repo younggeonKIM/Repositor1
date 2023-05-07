@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+.cars {padding:0px; margin:0px; list-style:none;
+		width:120px; float:left;}
+.cars li {width:100px; height:100px; padding:5px 10px;}
+.cars img {width:100px; height:100px;}
+.showCar {width:500px; height:320px; padding:5px 0px;
+		float:left;}
+#showroom {width:500px; height:320px;}
+footer {clear:both;}
+</style>
+<script type="text/javascript">
+function setCar(pos) {
+	var img1 = "img/1.jpg"; var img2 = "img/2.jpg";
+	var img3 = "img/3.jpg"; var img4 = "img/4.jpg";
+	switch(pos) {
+	case 0: document.getElementById("showroom").src=img1; break;
+	case 1: document.getElementById("showroom").src=img2; break;
+	case 2: document.getElementById("showroom").src=img3; break;
+	case 3: document.getElementById("showroom").src=img4; break;
+	}
+}
+</script>
+</head>
+<body>
+<header>
+	<h2 align="center">자동차 Show Room ver1.0</h2>
+</header>
+<section>
+	<ul class="cars">
+		<li><a href="#" onClick="setCar(0)"><img alt="" src="img/1.jpg"></a></li>
+		<li><a href="#" onClick="setCar(1)"><img alt="" src="img/2.jpg"></a></li>
+		<li><a href="#" onClick="setCar(2)"><img alt="" src="img/3.jpg"></a></li>
+		<li><a href="#" onClick="setCar(3)"><img alt="" src="img/4.jpg"></a></li>
+	</ul>
+	<div class="showCar">
+		<img alt="" src="img/1.jpg" id="showroom">
+	</div>
+</section>
+<footer>
+	<h3 align="center">2022년 자동차 전시장.</h3>
+</footer>
+</body>
+</html>

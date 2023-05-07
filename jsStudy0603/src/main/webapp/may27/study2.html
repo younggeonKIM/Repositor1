@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<h2 align="center">2차원 배열을 이용해서 동 이름 출력</h2>
+<script type="text/javascript">
+var guName=["강남구", "송파구", "강북구", "종로구"];
+var dongName=[
+	["강남1동", "강남2동", "강남3동"], //강남구의 동 이름
+	["송파1동", "송파2동", "송파3동", "송파4동"], //송파구의 동 이름
+	["강북1동", "강북2동"], //강북구의 동 이름
+	["종로1동", "종로2동", "종로3동"], //종로구의 동 이름
+];
+var name=prompt("원하시는 구 이름을 입력하세요.");
+for (var idx=0;idx<guName.length;idx++) {
+	if (name==guName[idx]) {
+		for (var cnt=0;cnt<dongName[idx].length;cnt++) {
+			document.write(dongName[idx][cnt]+" ");
+		}//동 이름 출력하는 반복
+		document.write("<br/>");
+		break;
+	}//if의 끝
+}//for의 끝
+</script>
+</body>
+</html>

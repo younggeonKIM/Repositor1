@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+function goHome() {
+	location.href="../gameroom.html";
+}
+function selectComImg(num) {
+	var img="";
+	switch(num) {
+	case 1:img="../img/dice1.png"; break;
+	case 2:img="../img/dice2.png"; break;
+	case 3:img="../img/dice3.png"; break;
+	case 4:img="../img/dice4.png"; break;
+	case 5:img="../img/dice5.png"; break;
+	case 6:img="../img/dice6.png"; break;
+	}
+	return img;
+}
+function selectGamerImg(num) {
+	var img="";
+	switch(num) {
+	case 1:img="../img/one.png"; break;
+	case 2:img="../img/two.png"; break;
+	case 3:img="../img/three.png"; break;
+	case 4:img="../img/four.png"; break;
+	case 5:img="../img/five.png"; break;
+	case 6:img="../img/siz.png"; break;
+	}
+	return img;
+}
+function goGame() {
+	var com=parseInt((Math.random()*6)+1);
+	var gamer=parseInt((Math.random()*6)+1);
+	var comImg= " "; //컴퓨터의 주사위 이미지 이름용 변수
+	var gamerImg= " "; //게이머의 주사위 이미지 이름용 변수
+	comImg=selectComImg(com); //이미지 이름을 찾음
+	gamerImg=selectGamerImg(gamer); //이미지 이름을 찾음
+	document.getElementById("dice1").src=comImg;
+	document.getElementById("dice2").src=gamerImg;
+	var msg="";
+	if (com==gamer) {msg="<h3>무승부입니다. </h3>";}
+	else if (com>gamer) {msg="<h3>컴퓨터의 승리입니다. </h3>";}
+	else {msg="<h3>게이머의 승리입니다. </h3>";}
+	document.getElementById("result").innerHTML=msg;
+}
+</script>
+</head>
+<body>
+<div align="center">
+	<h2>주사위 게임에 오신 것을 환영합니다~</h2>
+	<img alt="" src="../img/dice5.png" id="dice1" 
+	width="200" height="200">
+	<img alt="" src="../img/three.png" id="dice2" 
+	width="200" height="200"><br/>
+<div id="result"></div>
+<input type="button" value="게임 시작" onClick="goGame()"/>
+<input type="button" value="홈으로" onClick="goHome()"/>
+</div></body>
+</html>

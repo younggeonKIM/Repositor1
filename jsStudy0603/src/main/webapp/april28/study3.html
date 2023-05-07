@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+var name=prompt("이름을 입력하세요.");
+var addr=prompt("주소를 입력하세요.");
+var sub1=prompt("미술점수를 입력하세요.");
+var sub2=prompt("음악점수를 입력하세요.");
+var sub3=prompt("체육점수를 입력하세요.");
+var num1=parseInt(sub1); var num2=parseInt(sub2);
+var num3=parseInt(sub3); var sum=num1+num2+num3;
+var ave= sum/3; var html="<table border='1'><tr><th>";
+html=html+"이름</th><td>"+name+"</td></tr>";
+html=html+"<tr><th>주소</th><td>"+addr+"</td></tr>";
+html=html+"<tr><th>점수 합계</th><td>"+sum+"</td></tr>";
+html=html+"<tr><th>점수 평균</th><td>"+ave+"</td></tr>";
+html=html+"</table>"; document.write(html);
+</script>
+</body>
+</html>

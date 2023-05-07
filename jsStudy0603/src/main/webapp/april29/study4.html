@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+var com=parseInt((Math.random()*6)+1);
+var gamer=parseInt((Math.random()*6)+1);
+
+if (gamer>com) {
+	document.write("<h2>축하합니다!! 승리했습니다.</h2>");
+}
+else {
+	if (gamer==com) {
+		document.write("<h2>이런 무승부군요.</h2>");
+		}
+	else {
+		document.write("<h2>안됐네요. 패배했습니다.</h2>");
+		}
+}
+document.write("<h2>컴퓨터:"+com+",게이머:"+gamer+"</h2>")
+</script>
+</body>
+</html>

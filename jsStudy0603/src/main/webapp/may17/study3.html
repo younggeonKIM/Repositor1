@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="" name=frm>
+행의 개수를 입력하세요. <input type="text" name="ROW"/><br/>
+열의 개수를 입력하세요. <input type="text" name="COL"/><br/>
+버튼을 누르면, 입력한 행과 열로 테이블이 만들어집니다.<br/>
+<input type="button" value="만들기" onClick="doWork()"/>
+<input type="button" value="취 소"/>
+</form>
+<div id="result"></div>
+<script type="text/javascript">
+function makeTable(r,c) {
+	var html="<table border='1'>";
+	for (var row=1;row<=r;row++) {
+		html=html+"<tr height='10px'>";
+		for (var col=1;col<=c;col++) {//열 반복
+			html=html+"<td width='10px'>"+row+", "+col+"</td>";
+		}
+		html=html+"</tr>";
+	}
+	html=html+"</table>";
+	document.getElementById("result").innerHTML=html;
+}
+function doWork() {
+	var row=document.frm.ROW.value;
+	var col=document.frm.COL.value;
+	makeTable(row,col);
+}
+</script>
+</body>
+</html>

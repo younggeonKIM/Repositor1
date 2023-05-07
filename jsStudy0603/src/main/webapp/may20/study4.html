@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+//5판 3승의 가위, 바위, 보 게임
+//2. 무한반복
+var winI=0; var winCom=0; //승리횟수를 세기 위한 변수
+var gameCnt=0; //게임횟수를 세기 위한 변수
+for (;;) {
+	var input=prompt("1(가위), 2(바위), 3(보) 중 하나를 입력하세요.")
+		//가위, 바위, 보를 한다.
+	var com=parseInt((Math.random()*3)+1);
+	var gamer=parseInt(input);
+	if ((gamer==1&&com==3)||(gamer==2&&com==1)||(gamer==3&&com==2)) {
+		winI++;
+	}
+	else if (com==gamer) {
+		
+	}
+	else {
+		winCom++;
+		}
+	gameCnt++;
+	if (gameCnt==5||winI==3||winCom==3) {
+		break;
+		}
+}
+document.write("<h2>게이머 승: "+winI+" 컴퓨터 승: "+winCom+"</h2>");
+</script>
+</body>
+</html>

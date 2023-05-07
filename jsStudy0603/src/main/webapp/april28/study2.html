@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+alert("****학점 계산 시스템****");
+var credit1 = prompt("A과목의 점수를 입력하세요.");
+var credit2 = prompt("B과목의 점수를 입력하세요.");
+var credit3 = prompt("C과목의 점수를 입력하세요.");
+var num1 = parseInt(credit1);
+var num2 = parseInt(credit2);
+var num3 = parseInt(credit3);
+var sum = num1 + num2 + num3;
+alert("총점은 다음과 같습니다.:"+sum);
+var ave = sum/3;
+alert("평균은 다음과 같습니다.:"+ave);
+alert("**** 이용해 주셔서 감사합니다. ****");
+document.write("<h2>총점:"+sum+"</h2>");
+document.write("<h2>평균:"+ave+"</h2>");
+</script>
+</body>
+</html>

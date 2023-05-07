@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+//논리연산자 &&, ||
+//산술연산자 +, -, *, /, %(나머지연산자)
+var a = 10/3;
+var b = 10%3; //10을 3으로 나누고 나눠지지 않는 나머지
+document.write ("<h2>"+a+","+b+"</h2>");
+var c = 75; 
+var front=parseInt(c/10);
+var back=c%10;
+document.write ("<h2>앞자리수:"+front+",뒷자리수:"+back+"</h2>");
+var d = 852;
+var f1 =parseInt(d/100);//첫번째 자리수 찾음
+var e = d%100;
+var f2 =parseInt(e/10);//두번째 자리수 찾음
+var f3 = e%10;//세번째 자리수 찾음
+document.write ("<h2>첫번째:"+f1+",두번째:"+f2+",세번째:"+f3+"</h2>")
+var quiz=78234; //7,8,2,3,4로 분리
+var fa1=parseInt(quiz/10000); //7을 분리
+var a1 =quiz%10000; //8234를 찾음
+var fa2=parseInt(a1/1000); //8을 찾음
+var a2 =quiz%1000; //234를 찾음
+var fa3=parseInt(a2/100); //2를 찾음
+var a3 =quiz%100; //34를 찾음
+var fa4=parseInt(a3/10); //3을 찾음
+var fa5=quiz%10; //4를 찾음
+document.write ("<h3>첫번째:"+fa1+",두번째:"+fa2+",세번째:"+fa3+
+		",네번째:"+fa4+",다섯번째:"+fa5+"</h3>")
+</script>
+</body>
+</html>

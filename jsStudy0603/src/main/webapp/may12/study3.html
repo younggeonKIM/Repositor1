@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+//5명의 학생의 점수를 입력받아서, 총점과 평균을 출력
+var totalScore =0; //총점이 저장될 변수
+var average =0; //평균이 저장될 변수
+var names =""; //학생의 이름이 저장될 변수
+var name ="";
+var score=0;
+for (var a=1 ; a<=5 ; a=a+1) {
+	name =prompt ("이름을 입력하세요.");
+	names=names+name+" ";
+	score=parseInt(prompt ("점수를 입력하세요."));
+	totalScore=totalScore+score;
+}
+average=totalScore/5; //평균을 계산한다.
+document.write("<table border='1'><tr><th>이름</th><td>"+
+		names+"</td></tr><tr><th>총점과 평균</th><td>"+
+		totalScore+", "+average+"</td></tr></table>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

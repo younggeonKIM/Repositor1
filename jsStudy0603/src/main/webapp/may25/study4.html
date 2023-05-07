@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<div align="center">
+<h2>로또 번호 생성기 ver1.0</h2>
+<input type="button" value="번호 생성" onClick="makeLotto()"/><br/>
+<div id="result">이 곳에 출력됩니다.</div>
+<h2>이벤트 당첨자 추첨</h2>
+<p>여름 맞이 행사에 참석한 참석자가 모두 2352명입니다.<br/>
+참석자 중에 이벤트 당첨자를 추첨합니다. 당첨자는 모두 10명입니다.<br/>
+참석자는 모두 1부터 2352번까지 번호를 가지고 있습니다.<br/>
+10명의 당첨자를 출력합니다.</p>
+<input type="button" value="당첨자 발표" onClick="makeWinner()"/>
+<div id="winner">이 곳에 출력됩니다.</div>
+</div>
+<script type="text/javascript">
+function makeLotto() {
+	//1~45의 숫자를 배열에 넣는다.
+	var numbers = new Array();
+	for (var cnt=0;cnt<45;cnt++) {
+		numbers[cnt]=cnt+1;
+	}
+	var imsi=-1;
+	for (var mix=0;mix<500;mix++) {
+		imsi=numbers[0];
+		var nansu=parseInt(Math.random()*45);
+		numbers[0]=numbers[nansu];
+		numbers[nansu]=imsi;
+	}//섞는다. (충분히 섞으면 되므로 횟수는 본인이 결정)
+	var html="";
+	for (var bri=0;bri<6;bri++) {
+		html=html+numbers[bri]+" ";
+	}
+	document.getElementById("result").innerHTML=html;
+}
+function makeWinner() {
+	var sumEvent=[];
+	for (var attend=0;attend<2352;attend++) {
+		sumEvent[attend]=attend+1;
+	}
+	var imsi=-1;
+	for (var mix=0; mix<5000; mix++) {
+		imsi=sumEvent[0];
+		var Nansu=parseInt(Math.random()*2352);
+		sumEvent[0]=sumEvent[Nansu];
+		sumEvent[Nansu]=imsi;
+	}
+	var bid="<table border='1'><tr>";
+	for (var get=0;get<10;get++) {
+		bid=bid+"<td>"+sumEvent[get]+"</td>";
+	}
+	bid=bid+"</tr></table>";
+	document.getElementById("winner").innerHTML=bid;
+}
+</script>
+</body>
+</html>

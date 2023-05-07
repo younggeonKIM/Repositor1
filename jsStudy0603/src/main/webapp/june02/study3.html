@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body onload="startClock()">
+<div align="center">
+<h2>올림픽 메달 집계 ver2.0</h2>
+<table border='1'>
+<tr><th>대한민국</th><th>중 국</th><th>일 본</th></tr>
+<tr><td id="korea"><input type="button" value="보 기" onClick="korea()"/></td>
+	<td id="china"><input type="button" value="보 기" onClick="china()"/></td>
+	<td id="japan"><input type="button" value="보 기" onClick="japan()"/></td>
+</table><br/>
+<h2>관광지 소개 APP ver2.0</h2>
+<form action="" name="frm">
+<table>
+<tr><th>지 역 선 택</th><td><select name="LOC">
+							<option value="SEOUL">서 울</option>
+							<option value="PUSAN">부 산</option>
+							<option value="DAEJEON">대 전</option>
+						</select></td></tr>
+<tr><th>소 개</th><td><textarea rows="5" cols="30" id="here"></textarea>
+				</td></tr>
+<tr><td colspan="2" align="center"><input type="button" value="보 기" 
+									onClick="hotSpot()"/>
+	</td></tr>
+</table><br/><br/>
+<div id="clock"></div>
+</form>
+<script type="text/javascript">
+function workingClock() {
+	var days=["일", "월", "화", "수", "목", "금", "토"];
+	var today=new Date(); var year=today.getFullYear();
+	var month=today.getMonth()+1;
+	if(month<10) {
+		month="0"+month; //10이하면 0을 앞에 붙임
+	}
+	var date=today.getDate();
+	if (date<10) {
+		date="0"+date;
+	}
+	var idx=today.getDay(); var day=days[idx];
+	var hour=today.getHours();
+	var min=today.getMinutes();
+	if (min<10) {
+		min="0"+min;
+	}
+	var sec=today.getSeconds();
+	if (sec<10) {
+		sec="0"+sec;
+	}
+	var str=year+"-"+month+"-"+date+" "+hour+":"+min+":"+sec+" "+day;
+	document.getElementById("clock").innerHTML=str;
+}
+function startClock() {
+	setInterval (workingClock, 1000); //1초마다 workingClock 함수를 호출
+}
+var tourPlace={
+	"seoul":{"intro":"대한민국의 수도","spot1":"광화문","spot2":"청계천",
+			"spot3":"경복궁"},
+	"pusan":{"intro":"대한민국의 도시 중 하나", "spot1":"해운대", "spot2":"광안리",
+			"spot3":"자갈치 시장"},
+	"daejeon":{"intro":"대한민국의 중심에 위치한 도시", "spot1":"충남대", 
+			"spot2":"KAIST", "spot3":"먹자골목"}
+};
+function hotSpot() {
+	var city=document.frm.LOC.value;
+	var html="";
+	switch (city) {
+	case "SEOUL" : html=tourPlace.seoul; break;
+	case "PUSAN" : html=tourPlace.pusan; break;
+	case "DAEJEON" : html=tourPlace.daejeon; break;
+	}
+	var msg="소개: "+html.intro+", 주요관광지 1: "+html.spot1+
+			", 주요관광지 2: "+html.spot2+", 주요관광지 3: "+html.spot3;
+	document.getElementById("here").innerHTML=msg;
+}
+var medals={
+	"korea":{"gold":10, "silver":9, "bronze":8},
+	"china":{"gold":9, "silver":8, "bronze":7},
+	"japan":{"gold":8, "silver":7, "bronze":6}
+};
+function japan() {
+	var html="<table><tr><th>금메달</th><th>은메달</th><th>동메달</th></tr>";
+	html=html+"<tr><td>"+medals.japan.gold+"</td><td>"+
+		medals.japan.silver+"</td><td>"+medals.japan.bronze+"</td></tr>";
+	document.getElementById("japan").innerHTML=html;
+}
+function china() {
+	var html="<table><tr><th>금메달</th><th>은메달</th><th>동메달</th></tr>";
+	html=html+"<tr><td>"+medals.china.gold+"</td><td>"+
+		medals.china.silver+"</td><td>"+medals.china.bronze+"</td></tr>";
+	document.getElementById("china").innerHTML=html;
+}
+function korea() {
+	var html="<table><tr><th>금메달</th><th>은메달</th><th>동메달</th></tr>";
+	html=html+"<tr><td>"+medals.korea.gold+"</td><td>"+
+		medals.korea.silver+"</td><td>"+medals.korea.bronze+"</td></tr>";
+	document.getElementById("korea").innerHTML=html;
+}
+</script>
+</div>
+</body>
+</html>

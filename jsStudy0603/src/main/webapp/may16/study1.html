@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+//열에 단제목이 있는 구구단
+//1단, 2단, 3단, ......9단
+//1*1=1 2*1=2 3*1=3 9*1=9
+document.write("<h2>열에 단제목이 있는 구구단</h2>");
+document.write("<table border='1'>");
+for (var dan=0;dan<=9;dan++) {//횟수:10회
+	document.write("<tr>");
+	for (var su=1;su<=9;su++) {//횟수:10회
+		if(dan==0) {
+			document.write("<td align='center'>"+su+"단</td>");
+		}
+		else {
+			document.write("<td>"+su+"*"+dan+"="+(su*dan)+"</td>");
+		}
+	}
+	document.write("</tr>");
+}
+document.write("</table>");
+document.write("<h2>열에 단제목이 있는 짝수 구구단 2, 4, 6, 8단</h2>");
+document.write("<table border='1'>");
+for ( var dan=0 ; dan<=9 ; dan++ ){ //행 반복
+	document.write("<tr>");
+	for ( var su=2 ; su<9 ; su=su+2 ) { //열 반복
+		if (dan==0) {
+				document.write("<td align='center'>"+su+"단</td>");
+		}
+		else {
+				document.write("<td>"+su+"*"+dan+"="+(su*dan)+"</td>");
+		}
+	}
+	document.write("</tr>");
+}
+document.write("</table>");
+document.write("<h2>열에 단제목이 있는 홀수 구구단</h2>");
+document.write("<table border='1'>");
+for (var dan=0;dan<=9;dan++) {//행 반복
+	document.write("<tr>");
+	for (var su=1;su<=9;su=su+2) {//열 반복
+		if (dan==0) {
+			document.write ("<td align='center'>"+su+"단</td>");
+		}
+		else {
+			document.write ("<td>"+su+"*"+dan+"="+(su*dan)+"</td>");
+		}
+	}
+	document.write("</tr>");
+}
+document.write("</table>");
+//도전과제
+//1. 열에 단제목이 있는 짝수-짝수 구구단
+document.write("<h2>열에 단제목이 있는 짝수-짝수 구구단</h2>");
+document.write("<table border='1'>");
+for (var dan=0 ; dan<9 ; dan=dan+2) {
+	document.write("<tr>");
+	for (var su=2 ; su<9 ; su=su+2) {
+		if (dan==0) {
+			document.write("<td align='center'>"+su+"단</td>");
+		}
+		else {
+			document.write("<td>"+su+"*"+dan+"="+(su*dan)+"</td>");
+		}
+	}
+	document.write("</tr>");
+}
+document.write("</table>");
+//2. 열에 단제목이 있는 홀수-홀수 구구단
+document.write("<h2>열에 단제목이 있는 홀수-홀수 구구단</h2>");
+document.write("<table border='1'>");
+for (var dan=-1;dan<=9;dan=dan+2) {
+	document.write("<tr>");
+	for (var su=1;su<=9;su=su+2) {
+		if (dan==-1) {
+			document.write("<td align='center'>"+su+"단</td>");
+		}
+		else {
+			document.write("<td>"+su+"*"+dan+"="+(su*dan)+"</td>");
+		}
+	}
+	document.write("</tr>");
+}
+document.write("</table>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<div align="center">
+<h2>배열을 이용한 성적 처리 ver1.0</h2>
+	<p>20명 학생의 성적과 이름을 내림차순으로 출력합니다.</p>
+<input type="button" value="성적 처리" onClick="makeResult()"/>
+<div id="result"></div>
+	<p>25명의 학생이 JPT(0~990) 시험을 봤습니다. 25명 학생의 명단과 점수, 총점, 평균, 
+	최고점, 최저점을 출력합니다.</p>
+<input type="button" value="JPT 결과" onClick="makeJPT()"/>
+<div id="result2"></div>
+</div>
+<script type="text/javascript">
+function rnd(num) {
+	return parseInt(Math.random()*num);
+}
+function makeResult() {
+	var surname=["김", "이", "박", "최", "정", "조", "하", "구", "곽", "채",
+					"송", "곽", "오", "문", "전", "윤"];
+	var firstname=["태균", "영건", "강민", "영민", "나영", "다영", "도원", 
+					"현우", "선미", "승아", "태우", "태민", "소은", "하연", "승훈"
+					,"승환", "도훈", "종민", "세미", "하늘"];
+	var name=new Array(); //배열만 생성
+	for (var idx=0; idx<20 ;idx++) {//20번 반복(20명의 학생 이름)
+		name[idx]=surname[rnd(16)]+firstname[rnd(20)];
+	}
+	var score=new Array();
+	for (var idx=0; idx<20 ; idx++) {//20번 반복(20명의 점수)
+		score[idx]=rnd(101); //0~100 난수
+	}
+	var html="<table border='1'><tr><th></th><th>이름</th>";
+	html=html+"<th>점수</th></tr>"; //첫 번째 행
+	for (var idx=0; idx<20 ; idx++) {
+		html=html+"<tr><td>"+(idx+1)+"</td>";
+		html=html+"<td>"+name[idx]+"</td>";
+		html=html+"<td>"+score[idx]+"</td></tr>";		
+	}
+	html=html+"</table><br/>";
+	var total=0; //총점이 저장될 변수
+	for (var idx=0; idx<20 ; idx++) {
+		total=total+score[idx];
+	}
+	var ave = total/score.length; //평균=총점/인원 수
+	var max =score[0]; var min=score[0]; //최고, 최저 점수를 위한 변수
+	var maxPos=0; //최고점의 위치
+	var minPos=0; //최저점의 위치
+	for (var idx=0 ; idx<20; idx++) {
+		if (max<score[idx]) {
+			max=score[idx]; maxPos=idx;
+		}
+		if (min>score[idx]) {
+			min=score[idx]; minPos=idx;
+		}
+	}
+	html=html+"<table border='1'><tr><th>총점</th>";
+	html=html+"<th>평균</th><th>최고점</th><th>이름</th><th>최저점</th><th>이름</th></tr>";
+	html=html+"<tr><td>"+total+"</td><td>"+ave+"</td><td>"+max+
+			"</td><td>"+name[maxPos]+"</td><td>"+min+"</td><td>"+
+			name[minPos]+"</td></tr></table>";
+	document.getElementById("result").innerHTML=html;
+}
+function makeJPT() {
+	var surname=["김", "이", "박", "최", "정", "조", "하", "구", "곽", "채",
+		"송", "곽", "오", "문", "전", "윤"];
+	var firstnameJ=["태균", "영건", "강민", "영민", "나영", "다영", "도원", 
+		"현우", "선미", "승아", "태우", "태민", "소은", "하연", "승훈"
+		,"승환", "도훈", "종민", "세미", "하늘", "예은", "희수", "건희", 
+		"재명", "석열"];
+	var nameJ=new Array();
+	for (var a=0; a<25; a++) {
+		nameJ[a]=surname[rnd(16)]+firstnameJ[rnd(25)];
+	}
+	var scoreJ=new Array();
+	for (var a=0; a<25; a++) {
+		scoreJ[a]=rnd(991);
+	}
+	var htmlJ="<table border='1'><tr><th></th><th>이름"+
+				"</th><th>점수</th></tr>";
+	for (var a=0; a<25 ; a++) {
+		htmlJ=htmlJ+"<tr><td>"+(a+1)+"</td><td>"+nameJ[a]+
+				"</td><td>"+scoreJ[a]+"</td></tr>";
+	}
+	htmlJ=htmlJ+"</table><br/>";
+	var totalJ=0; 
+	for (var a=0; a<25; a++) {
+		totalJ=totalJ+scoreJ[a];
+	}
+	var aveJ=totalJ/scoreJ.length;
+	var maxJ=scoreJ[0]; var minJ=scoreJ[0];
+	var maxPosJ=0; var minPosJ=0;
+	for (var a=0; a<25; a++) {
+		if (maxJ<scoreJ[a]) {
+			maxJ=scoreJ[a]; maxPosJ=a;
+		}
+		if (minJ>scoreJ[a]) {
+			minJ=scoreJ[a]; minPosJ=a;
+		}
+	}
+	htmlJ=htmlJ+"<table border='1'><tr><th>총점</th><th>평균</th>"
+			+"<th>이름</th><th>최고점</th><th>이름</th><th>최저점</th></tr>";
+	htmlJ=htmlJ+"<tr><td>"+totalJ+"</td><td>"+aveJ+"</td><td>"
+			+nameJ[maxPosJ]+"</td><td>"+maxJ+"</td><td>"
+			+nameJ[minPosJ]+"</td><td>"+minJ+"</td></tr></table>";
+	document.getElementById("result2").innerHTML=htmlJ;
+}
+</script>
+</body>
+</html>

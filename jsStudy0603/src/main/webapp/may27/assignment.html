@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<div align="center">
+<h2>관광지 소개 APP</h2>
+<p>지역 이름을 선택하면, 해당 지역의 관광지를 출력합니다.</p>
+<form action="" name="frm">
+지역 이름을 선택하세요 : <select name="Province">
+					<option>----지역명을 선택하세요----</option>
+					<option>경기도 용인시</option><option>경기도 수원시</option>
+					<option>경기도 광명시</option><option>서울 송파구</option>
+</select>
+<input type="button" value="관광지 보기" onClick="showTourlist()"/>
+</form>
+<div align="center" id="result">이 곳에 출력됩니다.</div>
+</div>
+<script type="text/javascript">
+function showTourlist() {
+	var tourli=[
+		["에버랜드", "한국민속촌", "경기어린이박물관", "마북리석불입상"], //용인시
+		["수원화성", "광교호수공원", "방화수류정"], //수원시
+		["광명동굴", "이케아"], //광명시
+		["잠실한강공원", "석촌호수", "롯데타워"] //송파구
+	];
+	var idx=document.frm.Province.selectedIndex;
+	if (idx!=0) {
+		var html="";
+		for (var a =0;a<tourli[idx-1].length;a++) {
+			html=html+tourli[idx-1][a]+" ";
+		}
+		document.getElementById("result").innerHTML=html;
+	} else {
+		alert("관광지 알고 싶은 지역을 선택하세요.");
+	}
+}
+</script>
+</body>
+</html>

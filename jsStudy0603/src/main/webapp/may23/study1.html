@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<h2 align="center">while 반복</h2>
+<script type="text/javascript">
+//for. 5회 반복(1~5, 0~4, ..., 5~1)
+for (var cnt=1 ; cnt<=5 ; cnt++) {
+	document.write("<font size='5'>"+cnt+"</font>");
+}
+document.write("<br/>");
+var count = 0;
+while (count<=4) {
+	count++;
+	document.write("<font size='5'>"+count+"</font>");
+	
+}
+document.write("<br/>");
+count=1;
+while (count<=5) {
+	document.write("<font size='5'>"+count+"</font>");
+	count++;
+}
+document.write("<br/>");
+document.write("<h2 align='center'>1부터 10까지 카운트 업</h2>");
+var cnt=0;
+while (cnt<10) {
+	cnt++;
+	document.write("<font size='5'>"+cnt+"</font>");
+}
+document.write("<br/>");
+cnt=1;
+while (cnt<=10) {
+	document.write("<font size='5'>"+cnt+"</font>");
+	cnt++;
+}
+document.write("<br/>");
+document.write("<h2 align='center'>10부터 1까지 카운트 다운</h2>");
+for (var cnt1=10;cnt1>0;cnt1--) {
+	document.write("<font size='5'>"+cnt1+"</font>");
+}
+document.write("<br/>");
+var cnt1 =10;
+while (cnt1>=1) {
+	document.write("<font size='5'>"+cnt1+"</font>");
+	cnt1--;
+}
+document.write("<br/>");
+cnt1=11;
+while (cnt1>1) {
+	cnt1--;
+	document.write("<font size='5'>"+cnt1+"</font>");
+}
+</script>
+</body>
+</html>

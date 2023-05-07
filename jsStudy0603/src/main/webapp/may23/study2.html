@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+document.write("<h2 align='center'>1~100까지 합</h2>");
+var sum=0; //합을 위한 변수
+for (var cnt=1;cnt<101;cnt++) {
+	sum=sum+cnt;
+}
+document.write("for을 이용한 합:"+sum+"<br/>");
+sum=0;
+var count=1;
+while (count<101) {
+	sum=sum+count;
+	count++;
+}
+document.write("while을 이용한 합:"+sum+"<br/>");
+sum=0;
+count=0;
+while (count<100) {
+	count++;
+	sum=sum+count;
+}
+document.write("while을 이용한 합:"+sum+"<br/>");
+document.write("<h2 align='center'>for 구구단</h2>");
+for (var dan=1;dan<=9;dan++) {//단 반복
+	document.write("***"+dan+"단***<br/>");
+	for (var su=1;su<=9;su++) {//수 반복
+		document.write(dan+"*"+su+"="+(dan*su)+"<br/>");
+	}//수 반복 끝
+}//단 반복 끝
+document.write("<br/>");
+var dan=1; 
+document.write("<h2 align='center'>while 구구단</h2>");
+while (dan<=9) { //단 반복(1~9)
+	document.write("***"+dan+"단***<br/>");
+	var su=1;
+	while (su<=9) { //수 반복(1~9)
+		document.write(dan+"*"+su+"="+(dan*su)+"<br/>");
+		su++; //수를 1 증가한다.
+	}
+	dan++; //단을 1 증가한다.
+}
+</script>
+</body>
+</html>

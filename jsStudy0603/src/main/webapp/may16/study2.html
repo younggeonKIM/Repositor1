@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+.tree {line-height:0.4em; font-size:32px; color:green;}
+</style>
+<script type="text/javascript">
+//반복의 중첩(나무 그리기)
+//1. 높이가 10이고, 위로 갈수록 잎이 줄어드는 나무 
+//높이1: 잎10 /높이2: 잎9 /... /높이10: 잎1
+document.write("<div class='tree'>");
+for (var a=1;a<=10;a++) { //높이 반복 (1~10)
+	for (var star=1;star<=a;star++) { //잎사귀 반복 (높이만큼 반복)
+		document.write("*");		
+	}
+	document.write("<br/>");
+}
+document.write("<br/>");
+//2. 위로 갈수록 잎이 많아지는 나무
+//높이1: 잎1 /높이2: 잎2 /... /높이10: 잎10
+for (var nopi=10;nopi>=1;nopi--) {
+	for (var star=1;star<=nopi;star++) {
+		document.write("*");
+	}
+	document.write("<br/>");
+}
+document.write("<br/>");
+//3. 2.의 나무와 같은 나무
+//높이1: 잎10 /높이2: 잎9 /... /높이10: 잎1
+for (var nopi=1;nopi<=10;nopi++) {
+	for (var star=1;star<=(11-nopi);star++) {
+		document.write("*");
+	}
+	document.write("<br/>");
+}
+document.write("<br/>");
+//4. 잎의 개수가 홀수 개인 나무, 높이 10
+document.write("<h2 align='center'>홀수 나무, 높이10</h2>");
+for (var nopi=1 ; nopi<20 ; nopi=nopi+2) {//높이 : 10
+	for (var star=1 ; star<=nopi ; star++) {//잎 : 1, 3, 5, 7, ..., 19
+		document.write("*");
+	}
+	document.write("<br/>");
+}
+document.write("<br/>");
+//5. 잎의 개수가 짝수 개인 나무, 높이 10
+document.write("<h2 align='center'>짝수 나무, 높이10</h2>");
+for (var nopi=2;nopi<=20;nopi=nopi+2) {
+	for (var star=1;star<=nopi;star++) {
+		document.write("*");
+	}
+	document.write("<br/>");
+}
+document.write("</div>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>올림픽 메달 집계 ver1.0</h2>
+<script type="text/javascript">
+function Nation(name, n1, n2, n3) {
+	this.country=name;
+	this.gold=n1;
+	this.silver=n2;
+	this.bronze=n3;
+}
+var nations=[];
+nations[0]=new Nation("대한민국", 10, 9, 8);
+nations[1]=new Nation("중국", 9, 8, 7);
+nations[2]=new Nation("일본", 8, 7, 6);
+nations[3]=new Nation("태국", 7, 6, 5);
+for (var cnt=0; cnt<nations.length; cnt++) {//국가 이름만 출력
+	document.write(nations[cnt].country+"<br/>"); 
+}
+for (var cnt=0; cnt<nations.length; cnt++) {//금메달 개수만 출력
+	document.write(nations[cnt].gold+"<br/>");
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<div align="center">
+	<img alt="" src="img/dragon.png" id="drag" 
+	width="300" height="300"/><br/>
+	<input type="button" value="브레스" onClick="Breathe()"/>
+</div>
+<script type="text/javascript">
+function Breathe() {
+	setInterval (drag1,200);
+}
+function drag1() {
+	document.getElementById("drag").src="img/r_dragon.png";
+	setTimeout (drag2,100);
+}
+function drag2() {
+	document.getElementById("drag").src="img/dragon.png";
+}
+</script>
+</body>
+</html>

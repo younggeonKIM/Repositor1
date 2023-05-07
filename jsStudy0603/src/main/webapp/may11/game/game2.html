@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+function goHome() {
+	location.href="../gameroom.html";
+}
+function goGame() {
+	var com=parseInt((Math.random()*2)+1); //1,2
+	var gamer=parseInt(prompt("홀(1), 짝(2)를 입력하세요.")); //1,2
+	if (gamer>2||gamer<=0) {
+		alert("1과 2만 입력해주세요.");
+	}
+	else if (com==gamer) {
+		document.getElementById("result").innerHTML=
+			"<h3>당신이 이겼네요. 축하드립니다.</h3>"
+		document.getElementById("holJjak").src="../img/you_win.jpeg";
+	}
+	else {
+		document.getElementById("result").innerHTML=
+			"<h3>당신이 졌네요. 아쉽네요.</h3>"
+		document.getElementById("holJjak").src="../img/you_lose.jpeg";
+	}
+}
+</script>
+</head>
+<body>
+<div align="center">
+	<h2>홀짝 게임에 오신 것을 환영합니다~</h2>
+	<img alt="" src="../img/gababo.jpeg" width="400px"
+	height="300px" id="holJjak"><br/>
+	<font size="5" color="red">원하시는 버튼을 클릭하세요.</font>
+	<input type="button" value="홀짝 게임" onClick="goGame()"/>
+	<input type="button" value="홈으로" onClick="goHome()"/>
+<div id="result"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+//7판 4승의 주사위 게임
+//게이머의 승리횟수, 컴퓨터의 승리횟수
+function rnd(a) {
+	var rand=parseInt((Math.random()*6)+1);
+	return rand;
+}
+var winGamer=0;
+var winCom=0;
+var draw=0;
+for (var cnt=0;cnt<7;cnt++) {
+	var gamer=confirm("주사위를 굴려주세요.");
+	if (gamer==false||gamer==null) {
+			alert ("주사위를 굴려야 게임을 할 수 있습니다.");
+			cnt--;
+			continue;
+	}
+	var gamer1=rnd(gamer1);
+	var com=rnd(com);
+	if (gamer1>com) {
+		winGamer++;
+		alert("게이머: "+gamer1+" 컴퓨터: "+com+" 이므로 게이머의 승리입니다.");
+	}
+	else if(gamer1==com) {
+		draw++;
+		alert("게이머: "+gamer1+" 컴퓨터: "+com+" 이므로 무승부입니다.");
+	}
+	else {
+		winCom++;
+		alert("게이머: "+gamer1+" 컴퓨터: "+com+" 이므로 컴퓨터의 승리입니다.");
+	}
+	if (winCom==4||winGamer==4) {
+		break;
+	}
+}
+alert("게이머의 승리횟수: "+winGamer+" 컴퓨터의 승리횟수: "
+		+winCom+" 무승부 횟수: "+draw);
+</script>
+</body>
+</html>

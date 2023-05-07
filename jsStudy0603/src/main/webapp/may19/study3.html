@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<div align="center">
+	<h2>일정시간 간격으로 동일한 함수 호출</h2>
+	<img alt="" src="img/rabbit_1.png" id="rabbit" 
+	width="300" height="300"><br/>
+	<input type="button" value="시작" onClick="doRun()"/>
+</div>
+<script type="text/javascript">
+function doRun() {
+	setInterval (rabbit1, 200);
+}
+function rabbit1() {
+	document.getElementById("rabbit").src="img/rabbit_2.png";
+	setTimeout (rabbit2,100);
+}
+function rabbit2() {
+	document.getElementById("rabbit").src="img/rabbit_1.png";
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+function goHome() {
+	location.href="../gameroom.html";
+}
+function findImg(num) {
+	var img="";
+	switch(num) {
+	case 1:img="../img/gawi.png"; break;
+	case 2:img="../img/bawi.jpg"; break;
+	case 3:img="../img/bo.png"; break;
+	}
+	return img;
+}
+function findWinner3(n1,n2) {
+	var msg="";
+	if (n1==n2) {
+		msg="무승부";
+	}
+	else if ((n2+2)%3==n1%3) {
+		msg="게이머 승리";
+	}
+	else {
+		msg="게이머 패배";
+	}
+	return msg;
+}
+function findWinner2(n1,n2) {
+	var msg="";
+	if (n1==n2) {
+		msg="무승부";
+	}
+	else if ((n1==1&&n2==2)||(n1==2&&n2==3)||(n1==3&&n2==1)==true) {
+		msg="게이머 승리";
+	}
+	else {
+		msg="게이머 패배";
+	}
+	return msg;
+}
+function findWinner(n1,n2) {
+	var msg="";
+	switch(n1) {
+	case 1:
+		if (n2==1){
+			msg="가위vs가위로 무승부";
+		}else if (n2==2){
+			msg="가위vs바위로 컴퓨터 패배";
+		}else if (n2==3){
+			msg="가위vs바위로 컴퓨터 승리";
+		}
+		break;
+	case 2:
+			switch(n2) {
+			case 1: msg="바위vs가위로 컴퓨터 승리"; break;
+			case 2: msg="바위vs바위로 무승부"; break;
+			case 3: msg="바위vs보로 컴퓨터 패배"; break;
+			}
+		break;
+	case 3:
+		if (n2==1){
+			msg="보vs가위로 컴퓨터 패배";
+		}else if (n2==2){
+			msg="보vs바위로 컴퓨터 승리";
+		}else if (n2==3){
+			msg="보vs보로 무승부";
+		}
+		break;
+	}
+	return msg;
+}
+function goGame() {
+	var com =parseInt((Math.random()*3)+1); //1(가위),2(바위),3(보)
+	var gamer = parseInt(
+			prompt("가위(1), 바위(2), 보(3) 중 하나를 입력하세요."));
+	var comImg=""; var gamerImg="";
+	comImg=findImg(com); //컴퓨터의 이미지
+	gamerImg=findImg(gamer); //게이머의 이미지
+	document.getElementById("target1").src=comImg;
+	document.getElementById("target2").src=gamerImg;
+	document.getElementById("target2").width=400;
+	document.getElementById("target2").height=300;
+	var msg= findWinner3(com,gamer);
+	document.getElementById("result").innerHTML=msg;
+}
+</script>
+</head>
+<body>
+<div align="center">
+	<h2>가위, 바위, 보 게임에 오신 것을 환영합니다~</h2>
+	<img alt="" src="../img/gababo.jpeg" width="400" height="300"
+	id="target1"/>
+	<img alt="" src=" " id="target2"/><br/>
+<div id="result"></div>
+	<font size="5" color="red">원하시는 버튼을 눌러주세요.</font>
+	<input type="button" value="게임시작" onClick="goGame()"/>
+	<input type="button" value="홈으로" onClick="goHome()"/>
+</div>
+</body>
+</html>

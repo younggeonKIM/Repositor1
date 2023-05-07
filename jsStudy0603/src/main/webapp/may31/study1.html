@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<div align="center">
+<h2>Data 객체를 이용한 날짜 처리</h2>
+<input type="button" value="날짜보기" onClick="showToday()"/><br/>
+오늘 날짜 : <span id="today"></span><br/>
+과거의 어느날 : <span id="past"></span><br/>
+</div>
+<script type="text/javascript">
+function showToday() {
+	var current=new Date(); //날짜 객체 등록
+	var currYear=current.getFullYear(); //연도 획득
+	var currMonth=current.getMonth()+1; //월 획득 보통 두자리 숫자로 표현
+	var currDate=current.getDate(); //날짜 획득
+	var html="<font color='blue' size='6'>"+currYear+"/"+currMonth+
+				"/"+currDate;
+	var days=["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"];
+	var position=current.getDay(); //요일의 위치 획득
+	html=html+"<br/>"+days[position];
+	var hour=current.getHours(); //시간 획득
+	var min=current.getMinutes(); //분 획득
+	var sec=current.getSeconds(); //초 획득
+	html=html+" "+hour+":"+min+":"+sec+"</font>";
+	document.getElementById("today").innerHTML=html;
+	var past=new Date(); //날짜 객체 생성
+	past.setYear(2010); //2010년으로 날짜 객체를 설정
+	past.setMonth(0); //1월로 설정 (0~11월)
+	past.setDate(20); //20일로 설정
+	past.setHours(13); //오후 1시로 설정
+	past.setMinutes(30); //30분으로 설정
+	past.setSeconds(30); //30초로 설정
+	var pstYear=past.getFullYear();
+	var pstMonth=past.getMonth()+1;
+	var pstDate=past.getDate();
+	var pstPosition=past.getDay();
+	var pstDay=days[pstPosition];
+	var pstHour=past.getHours();
+	var pstMin=past.getMinutes();
+	var pstSec=past.getSeconds();
+	var pastDate=pstYear+"/"+pstMonth+"/"+pstDate;
+	pastDate=pastDate+" "+pstDay+" "+pstHour+":"+pstMin+":"+pstSec;
+	document.getElementById("past").innerHTML=pastDate;
+	//태어나서 오늘까지 소요된 날짜 계산
+	var birthday=new Date(1996,0,27); //1996년 1월 27일
+	var lifetime=current.getTime()-birthday.getTime();
+	//오늘 날짜(초) - 생일(초)
+	var spentDays=Math.floor(lifetime/(24*60*60*1000));
+	alert("태어나서 오늘까지 소요된 날짜: "+spentDays);
+}
+</script>
+</body>
+</html>

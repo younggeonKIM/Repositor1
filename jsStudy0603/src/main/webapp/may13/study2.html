@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+//문제1. 1~100 중 3과 4의 동시 배수의 합을 출력합니다.
+var hap=0;
+for (var a=1 ;a<101 ; a++) {
+	if((a%3==0)&&(a%4==0)) {
+		hap=hap+a;
+	}
+}document.write("<h2>문제1-1의 답:"+hap+"</h2>");
+hap=0;
+for (var a1=1 ; a1<101 ; a1++) {
+	if(a1%3==0) {
+		if(a1%4==0) {
+			hap=hap+a1;
+		}
+	}
+}document.write("<h2>문제1-2의 답:"+hap+"</h2>");
+//문제2. 1~500 중 4의 배수의 합을 출력합니다.
+hap=0;
+for (var b=1 ; b<501 ; b++) {
+	if(b%4==0) {
+		hap=hap+b;
+	}
+}document.write("<h2>문제2-1의 답:"+hap+"</h2>");
+hap=0;
+for (var b1=4; b1<501 ; b1=b1+4) {
+	hap=hap+b1;
+}document.write("<h2>문제2-2의 답:"+hap+"</h2>")
+//문제3. 100에서 200까지의 합을 출력합니다.
+hap=0;
+for (var c=100 ; c<=200 ; c++) {
+	hap=hap+c;
+}document.write("<h2>문제3의 답:"+hap+"</h2>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

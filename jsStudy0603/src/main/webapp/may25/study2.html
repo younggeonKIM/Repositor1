@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>배열을 이용한 게임의 히스토리 출력</h2>
+<script type="text/javascript">
+var gameHistory=new Array(); //배열 생성
+var comHistory=[]; //배열 생성
+var gamerHistory=[]; //배열 생성
+var comWin=0; var gamerWin=0; var draw=0;
+for (var a=0;a<10;a++) {//10회 반복
+	comHistory[a]=rnd();
+	gamerHistory[a]=rnd();
+	//승패무를 판단해서
+	if (comHistory[a]>gamerHistory[a]) {
+		gameHistory[a]="컴퓨터 승"; 
+		comWin++;
+	}
+	else if (comHistory[a]==gamerHistory[a]) {
+		gameHistory[a]="무승부";
+		draw++;
+	}
+	else {
+		gameHistory[a]="게이머 승";
+		gamerWin++;
+	}
+}
+document.write("<table border='1'>");
+document.write("<tr><th>횟수</th><th>컴퓨터</th>"+
+		"<th>게이머</th><th>결과</th></tr>");
+for (var cnt=0;cnt<10;cnt++) {
+	document.write("<tr><td>"+(cnt+1)+"</td>");
+	document.write("<td>"+comHistory[cnt]+"</td>");
+	document.write("<td>"+gamerHistory[cnt]+"</td>");
+	document.write("<td>"+gameHistory[cnt]+"</td></tr>");
+}
+document.write("</table><br/>");
+document.write("컴퓨터 승: "+comWin+", 게이머 승: "+
+		gamerWin+", 무승부: "+draw+"<br/>");
+function rnd() {
+	return parseInt((Math.random()*6)+1);
+}
+</script>
+</body>
+</html>
