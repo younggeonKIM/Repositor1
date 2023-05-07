@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>도전과제</title>
+<style type="text/css">
+h2 {font-family:'명조체'; color: #F66;}
+fieldset {font-family:'Times Roman'; color: #F0E68C; background-color: #E6E6FA;}
+legend {border : 1px,solid,#808080;}
+label {color: #32CD32;}
+</style>
+</head>
+<body>
+<h2>입력창 만들기 도전과제</h2>
+<form action="">
+<fieldset>
+	<legend>Your Details :</legend>
+<label>Name : <input type="text" name="NAME"/></label><br/>
+<label>Email : <input type="email" name="EMAIL"/></label>
+</fieldset>
+<fieldset>
+	<legend>Your Review :</legend>
+<label>How did you hear about us?
+<select name="HEAR">
+	<option value="GOOGLE">Google</option>
+	<option value="YOUTUBE">YOUTUBE</option>
+	<option value="ITUNES">iTunes</option>
+	<option value="AMAZON">Amazon</option>
+</select>
+</label><br/>
+<label>Would you visit again?<br/>
+	<input type="radio" name="VISIT" value="Y"/>Yes</label>
+	<label><input type="radio" name="VISIT" value="N"/>No</label>
+	<label><input type="radio" name="VISIT" value="M"/>Maybe</label>
+<br/>
+<label>Comments : <textarea name="COMMENT" rows="4" cols="20"></textarea></label><br/>
+<input type="checkbox" id="email" name="UPDATE" checked="checked" value="Y"/><label for="email">Sign me up for email updates</label><br/>
+<input type="submit" value="submit review"/>
+</fieldset>
+</form>
+</body>
+</html>

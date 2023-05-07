@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>데이터를 입력하세요.</h2>
+<form action="">
+이 름 : <input type="text" name="NAME" size="20"
+		maxlength="30" placeHolder="이름을 입력하세요"/><br/>
+암 호 : <input type="password" name="PWD" size="20"
+		maxlength="30" placeHolder="암호를 입력하세요"/><br/>
+이 공연에 대한 소감 : <textarea rows="4" cols="20" 
+name="COMMENT"></textarea><br/>
+당신이 좋아하는 장르 : <input type="radio" name="GENRE" 
+value="rock" checked="checked">락
+	<input type="radio" name="GENRE" 
+value="pop">팝
+	<input type="radio" name="GENRE" 
+value="jazz">재즈<br/>
+즐겨찾는 쇼핑몰 : <input type="checkbox" name="SHOP" 
+value="naver" checked="checked">네이버 쇼핑
+	<input type="checkbox" name="SHOP" 
+value="daum">다음쇼핑
+	<input type="checkbox" name="SHOP" 
+value="11st">11번가
+	<input type="checkbox" name="SHOP" 
+value="auc">옥션<br/>
+어떤 기기를 주로 사용하나요?
+	<select name="TOOLS">
+		<option value="mobile">스마트 폰</option>
+		<option value="mp3">엠피3</option>
+		<option value="tablet">태블릿</option>
+		<option value="note">노트북</option>
+	</select><br/>
+당신은 어떤 악기를 연주할 수 있나요?
+	<select name="INSTRUMENT" size="3" multiple="multiple">
+		<option value="guitar" selected="selected">기타</option>
+		<option value="drum">드럼</option>
+		<option value="piano">피아노</option>
+		<option value="bass">베이스</option>
+	</select><br/>
+업로드할 파일을 선택하세요 : 
+	<input type="file" name="upload_file"/><br/>
+<label>나이 : <input type="text" name="AGE"/></label><br/>
+성 별 : 
+	<input type="radio" id="female" name="GENDER" value="F"/>
+	<label for="female">여성</label>
+	<input type="radio" id="male" name="GENDER" value="M"/>
+	<label for="male">남성</label>
+<fieldset>
+	<legend>연 락 처</legend>
+	<label>이메일:<br/><input type="text" name="EMAIL"/>
+	</label><br/>
+	<label>휴대전화:<br/><input type="text" name="MOBILE"/>
+	</label><br/>
+	<label>유선전화:<br/><input type="text" name="PHONE"/>
+	</label><br/>
+</fieldset>
+이 름 : <input type="text" name="USERNAME" required="required"/><br/>
+암 호 : <input type="text" name="PASSWORD" required="required"/><br/>
+자기소개 : <textarea rows="3" cols="30" name="INTRO" 
+required="required"></textarea><br/>
+이메일 : <input type="email" name="E_MAIL"/>
+<input type="submit" value="제출하기"/><br/>
+출발일 : <input type="date" name="DEPART"/>
+</form>
+</body>
+</html>

@@ -1,0 +1,13 @@
+@charset "EUC-KR";
+#tbl tr th {background-color:#FF6347; border:2px solid yellow;}
+#tbl tr td {border:2px solid #FFF5EE;}
+#tbl {border-collapse:collapse;}
+.a01 {border:4px solid #98FB98; margin:8px 15px 8px 15px; 
+	padding:15px;}
+#menu ul li {list-style:none; color:#FF6347;  
+				border:4px ridge #FFD700; vertical-align:middle;
+				text-align:center; float:left; width:120px;}
+#menu {border:4px solid #98FB98; margin:8px 15px 8px 15px; 
+	padding:15px; height:50px; margin-right:500px; line-height:25px;
+	font-family:'°­³¶Äá'}
+#menu ul li:hover{background-color:#7FFFD4; color:#B22222;}

@@ -1,0 +1,9 @@
+@charset "EUC-KR";
+h1 {background-color:blue; color:white; height:50px;
+		padding:10px; height:50px; text-align:center;}
+#topMenu {height:30px; width:100%; background-color:violet;}
+#topMenu ul li {list-style:none; color:black; background-color:yellow;
+				float:left; line-height:10px; text-align:center;
+				vertical-align:middle;}
+section {background-color:blue; color:white;}
+footer {background-color:blue; color:white;}
